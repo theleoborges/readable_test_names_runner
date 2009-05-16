@@ -1,0 +1,18 @@
+ReadableTestNamesRunner
+=======================
+
+Rails allows you to define readable test names like this:
+
+test "the truth" do
+	assert true
+end
+
+This plugin allows you to run individual tests from the command line using its readable name.
+
+Example
+=======
+
+ruby your_test_case.rb -n "the truth"
+
+
+Copyright (c) 2009 Leonardo Borges - www.leonardoborges.com , released under the MIT license
