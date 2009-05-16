@@ -7,7 +7,7 @@ test "the truth" do
 	assert true
 end
 
-This plugin allows you to run individual tests from the command line using its readable name.
+With this plugin you can run individual tests from the command line using its readable names.
 
 Example
 =======
