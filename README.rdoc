@@ -2,37 +2,39 @@
 
 Rails allows you to define readable test names like this:
 
-test "the truth" do
-	assert true
-end
+	test "the truth" do
+		assert true
+	end
 
 With this plugin you can run individual tests from the command line using its readable names.
 
 === Exampe
 
-ruby your_test_case.rb -n "the truth"
+	ruby your_test_case.rb -n "the truth"
 
 === Shoulda
 
 The plugin also works with shoulda. Given the following tests:
 
-class ShouldaTest < ActiveSupport::TestCase
-  context "A User instance" do
+	class ShouldaTest < ActiveSupport::TestCase
+	  context "A User instance" do
 
-    should "return its full name" do
-      assert_equal 'John Doe', 'John Doe'
-    end
+	    should "return its full name" do
+	      assert_equal 'John Doe', 'John Doe'
+	    end
 
-    context "with a profile" do
-      should "return true when sent #has_profile?" do
-        assert false
-      end
-    end
-  end
-end
+	    context "with a profile" do
+	      should "return true when sent #has_profile?" do
+	        assert false
+	      end
+	    end
+	  end
+	end
 
 You can easily run individual tests like this: 
 
-ruby shoulda_test.rb -n "return its full name"
+	ruby shoulda_test.rb -n "return its full name"
+
+=== License
 
 Copyright (c) 2009 Leonardo Borges - www.leonardoborges.com , released under the MIT license
