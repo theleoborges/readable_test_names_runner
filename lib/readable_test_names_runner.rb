@@ -11,9 +11,11 @@ Test::Unit::AutoRunner.class_eval do
         case n
           when Regexp
             @filters << proc{|t| n =~ t.method_name ? true : nil}
-          else
-            n = n.start_with?("test_") ? n : "test_#{n.gsub(/[\s]/,'_')}"
+          when n.start_with?("test_")
             @filters << proc{|t| n == t.method_name ? true : nil}
+          else
+            n = Regexp.new(n.gsub(/[\s]/,"(_|\s)"))
+            @filters << proc{|t| n =~ t.method_name ? true : nil}
         end
     end
   end
